@@ -1,0 +1,234 @@
+@import './variable';
+@import './mixin';
+@import './animations';
+*,*::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  padding: 2rem;
+
+  @include respond(tab-port){
+    padding: 0;
+  }
+}
+
+html{
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+
+
+.hero{
+  height: 100vh;
+  background:linear-gradient(to bottom , rgba($pink-light, .5) , rgba($pink-dark,.7)) , url("../img/background-1.jpg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+  &-text-heading{
+    text-align: center;
+    font-size: 10rem;
+    /* width and color */
+    -webkit-text-stroke: 2px $white; 
+    color: transparent;
+    -webkit-background-clip : text;
+    &:hover{
+      // color: $white;
+    -webkit-background-clip : text;
+
+      animation: heading .2s forwards ease-in;
+      -webkit-text-stroke: 2px $white; 
+    }
+  }
+
+  &-btn{
+    margin-top: 10rem;
+  }
+
+  &-btn-link{
+    background: transparent;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: $white;
+    padding: 2rem 5rem;
+    border: 2px solid;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    transition: .2s;
+
+
+    &:hover{
+      color: $pink-dark;
+      background: $white;
+      letter-spacing: .6rem;
+    }
+  }
+}
+
+.thankyou{
+  margin-top: 5rem;
+
+
+  &-heading{
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(to bottom right , $pink-light , $pink-dark);
+    -webkit-background-clip : text;
+    color: transparent;
+  }
+  &-content{
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-evenly;
+
+    @include respond(tab-land){
+      flex-direction: column;
+      align-items: center;
+    }
+    
+  }
+
+  &-text{
+    flex: 0 0 40%;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include respond(tab-land){
+      font-size: 1.7rem;
+      padding:  5rem;
+    }
+  }
+
+  &-message{
+    @include respond(tab-land){
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+
+  &-message-end{
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &-photo{
+    position: relative;
+    
+    @include respond(phone){
+      transform: scale(.8);
+      margin-bottom: -3rem;
+
+      outline: 2rem solid  $pink-primary ;
+      outline-offset: 2rem;
+    }
+    &::after{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border: 1.4rem solid $pink-primary ;
+      top: -3rem;
+      left: 35rem;
+      transform: translateX(-100%);
+      z-index: -1;
+
+      @include respond(phone){
+        content: "";
+        width: 0;
+        height: 0;
+        border: none ;
+        z-index: -1;
+      }
+    }
+  }
+
+  
+}
+
+.features{
+  height: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom right , $pink-primary , $pink-dark);
+  padding: 3rem 2rem;
+
+  @media screen and (max-width:1295px){
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem;
+    height: auto;
+
+  }
+
+  &-feature{
+    height: 35rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: $white;
+    @media screen and (max-width:1295px){
+      width: 70%;
+      margin-bottom: 2rem;
+    }
+    box-shadow: 0 1.5rem 3rem rgba($black, 0.5);
+  }
+
+  &-icon{
+    text-align: center;
+    fill:  $pink-primary;
+    margin: 2rem 0;
+    height: 8rem;
+    width: rem;
+  }
+
+  &-text{
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(to bottom right , $pink-primary , $pink-dark);
+    -webkit-background-clip : text;
+    color: transparent;
+    margin: 3rem;
+  }
+
+  &-detail{
+    font-size: 2rem;
+    word-wrap: break-word;
+    color: $grey-dark;
+  }
+}
+
+.end{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-img{
+    height: 30rem;
+    width: auto;
+    clip-path: circle(40% at 51% 52%);
+    margin: 7rem 0;
+    outline: 1rem solid black;
+
+    @media screen and (max-width:370px){
+      margin: 3rem 0;
+      height: 20rem;
+
+    }
+  }
+
+}
