@@ -151,6 +151,9 @@ body {
           border: none;
           z-index: -1; } }
 
+.sec-features {
+  transition: .4s; }
+
 .features {
   height: 70rem;
   display: flex;
@@ -197,6 +200,7 @@ body {
     color: #868e96; }
 
 .end {
+  transition: .4s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,3 +215,7 @@ body {
       .end-img {
         margin: 3rem 0;
         height: 20rem; } }
+
+.invisible {
+  visibility: 0;
+  opacity: 0; }

@@ -81,6 +81,7 @@ body{
 
 .thankyou{
   margin-top: 5rem;
+  transition: .4s;
 
 
   &-heading{
@@ -164,7 +165,10 @@ body{
 
   
 }
+.sec-features{
+  transition: .4s;
 
+}
 .features{
   height: 70rem;
   display: flex;
@@ -221,6 +225,7 @@ body{
 }
 
 .end{
+  transition: .4s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,4 +244,9 @@ body{
     }
   }
 
+}
+
+.invisible{
+  visibility: 0;
+  opacity: 0;
 }
