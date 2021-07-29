@@ -96,6 +96,9 @@ body {
     background: linear-gradient(to bottom right, #f890b6, #d6336c);
     -webkit-background-clip: text;
     color: transparent; }
+    @media screen and (max-width: 400px) {
+      .thankyou-heading {
+        font-size: 2.5rem; } }
   .thankyou-content {
     padding: 4rem 0;
     display: flex;
